@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 142 56% 31%;
+    --primary-glow: 142 52% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --background: 0 0% 100%;
+    --foreground: 210 9% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 9% 13%;
+    --card-hover: 210 17% 98%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 9% 13%;
+
+    --secondary: 210 17% 98%;
+    --secondary-foreground: 210 9% 13%;
+
+    --muted: 210 17% 98%;
+    --muted-foreground: 210 8% 46%;
+
+    --accent: 210 17% 96%;
+    --accent-foreground: 210 9% 13%;
+
+    --success: 142 72% 39%;
+    --success-foreground: 0 0% 100%;
+    --warning: 43 96% 56%;
+    --warning-foreground: 210 9% 13%;
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 142 56% 31%;
+
+    --radius: 8px;
+
+    --gradient-primary: linear-gradient(135deg, hsl(142 56% 31%) 0%, hsl(142 52% 38%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 17% 98%) 100%);
+
+    --shadow-sm: 0 1px 2px 0 rgba(60, 64, 67, 0.1);
+    --shadow-md: 0 1px 3px 0 rgba(60, 64, 67, 0.15), 0 1px 2px -1px rgba(60, 64, 67, 0.1);
+    --shadow-card: 0 1px 2px 0 rgba(60, 64, 67, 0.1);
+    --shadow-card-hover: 0 1px 3px 0 rgba(60, 64, 67, 0.15), 0 4px 8px 0 rgba(60, 64, 67, 0.1);
+    --shadow-elegant: 0 1px 3px 0 rgba(60, 64, 67, 0.15);
+
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.1s ease;
+
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 9% 13%;
+    --sidebar-primary: 142 56% 31%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 17% 96%;
+    --sidebar-accent-foreground: 210 9% 13%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 142 56% 31%;
+  }
+
+  .dark {
+    --background: 210 9% 11%;
+    --foreground: 210 17% 95%;
+
+    --card: 210 9% 13%;
+    --card-foreground: 210 17% 95%;
+    --card-hover: 210 9% 16%;
+
+    --popover: 210 9% 13%;
+    --popover-foreground: 210 17% 95%;
+
+    --secondary: 210 9% 18%;
+    --secondary-foreground: 210 17% 95%;
+
+    --muted: 210 9% 18%;
+    --muted-foreground: 210 8% 60%;
+
+    --accent: 210 9% 20%;
+    --accent-foreground: 210 17% 95%;
+
+    --primary: 142 56% 31%;
+    --primary-glow: 142 52% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --success: 142 72% 39%;
+    --success-foreground: 0 0% 100%;
+    --warning: 43 96% 56%;
+    --warning-foreground: 210 9% 13%;
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 9% 22%;
+    --input: 210 9% 22%;
+    --ring: 142 56% 31%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(210 9% 14%));
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+    --shadow-card: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-card-hover: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+    --shadow-elegant: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+
+    --sidebar-background: 210 9% 11%;
+    --sidebar-foreground: 210 17% 95%;
+    --sidebar-primary: 142 56% 31%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 9% 18%;
+    --sidebar-accent-foreground: 210 17% 95%;
+    --sidebar-border: 210 9% 22%;
+    --sidebar-ring: 142 56% 31%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+
+  body { @apply bg-background text-foreground font-body; }
+
+  h1, h2, h3, h4, h5, h6 { @apply font-body; }
+
+  html:has(.app-shell) {
+    font-size: 90%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
