@@ -16,8 +16,8 @@ const buttonVariants = cva(
         ghost: "text-muted-foreground hover:bg-muted hover:text-foreground rounded-md",
         link: "text-primary underline-offset-4 hover:underline",
         hero: "bg-primary text-primary-foreground hover:bg-primary/90 rounded-md font-medium text-base shadow-none",
-        success: "bg-[hsl(142_72%_39%)] text-white hover:bg-[hsl(142_72%_35%)] rounded-md",
-        warning: "bg-[hsl(38_92%_50%)] text-white hover:bg-[hsl(38_92%_45%)] rounded-md",
+        success: "bg-success text-success-foreground hover:bg-success/85 rounded-md",
+        warning: "bg-warning text-warning-foreground hover:bg-warning/85 rounded-md",
       },
       size: {
         default: "h-9 px-4 py-2",
